@@ -1,0 +1,4 @@
+.advertisements {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Advertisements from '../../components/advertisements';
+
 import './home.css';
 
 const App: React.FunctionComponent = () => {
@@ -10,7 +12,7 @@ const App: React.FunctionComponent = () => {
         <p>Application to track and trace offers for flats and houses.</p>
       </header>
       <section>
-        <p>More information coming soon.</p>
+        <Advertisements />
       </section>
     </div>
   );
