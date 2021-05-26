@@ -18,16 +18,11 @@ const createServer = (): Server => {
   const apiProxy = createProxyMiddleware('/api', {
     target: 'https://www.sreality.cz/api/cs/v2',
     secure: false,
-    // changeOrigin: true,
     onProxyRes: function (proxyRes) {
       proxyRes.headers['Access-Control-Allow-Origin'] = '*';
-      // proxyRes.headers['Access-Control-Allow-Methods'] =
-      //   'GET,PUT,POST,DELETE,PATCH,OPTIONS';
-      console.log(proxyRes.statusCode);
     },
-    logLevel: 'debug',
     pathRewrite: {
-      '^/api/': '/' // remove base path
+      '^/api/': '/'
     }
   });
   app.use(apiProxy);
