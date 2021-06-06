@@ -1,0 +1,63 @@
+.estates__container {
+  padding-bottom: 30px;
+}
+
+.estates__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.estates__title {
+  font-size: 24px;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+.estates__price {
+  font-weight: bold;
+  align-self: flex-end;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+.estates__price--red {
+  background-color: orangered;
+}
+
+.estates__price--green {
+  background-color: greenyellow;
+}
+
+.estates__images-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.estates__image {
+  border-radius: 10px;
+  margin: 10px;
+  width: 48%;
+  height: fit-content;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .estates__image--wide {
+    width: 95%;
+  }
+}
+
+.action-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.action-bar__item {
+  margin-left: 10px;
+}

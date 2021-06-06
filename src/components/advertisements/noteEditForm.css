@@ -1,0 +1,23 @@
+.note-edit-form__wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.note-edit-form__paper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 600px;
+  height: 400px;
+  pointer-events: auto;
+}
+
+.note-edit-form {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}

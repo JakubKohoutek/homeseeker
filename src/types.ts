@@ -9,6 +9,12 @@ export type Estate = {
   highlights: { type: string; name: string; value: unknown }[];
 };
 
+export enum Status {
+  NEW = 'new',
+  NOPE = 'nope',
+  YES = 'yes'
+}
+
 export type EstateDBRecord = {
   id: number;
   status: string;
