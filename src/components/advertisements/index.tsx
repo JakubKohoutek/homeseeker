@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 
-import { getFlats, Estate } from '../../utils/apiClient';
+import { EstateDTO } from '../../types';
+
+import { getEstates } from '../../utils/apiClient';
 import Emoji from '../emoji';
 
 import './advertisements.css';
 import classnames from 'classnames';
 
 const Advertisements: React.FC = () => {
-  const [advertisements, setAdvertisements] = useState<Estate[]>([]);
+  const [advertisements, setAdvertisements] = useState<EstateDTO[]>([]);
 
   useEffect(() => {
-    getFlats().then((result) => {
+    getEstates().then((result) => {
       setAdvertisements(result);
       console.dir(result);
     });
@@ -25,25 +27,25 @@ const Advertisements: React.FC = () => {
           <div>
             <div className="advertisements__header">
               <div className="advertisements__title">
-                {advertisement.name}, {advertisement.locality}
+                {advertisement.data.name}, {advertisement.data.locality}
               </div>
               <div
                 className={classnames({
                   advertisements__price: true,
-                  'advertisements__price--red': advertisement.price >= 7800000,
-                  'advertisements__price--green': advertisement.price <= 7000000
+                  'advertisements__price--red': advertisement.data.price >= 7800000,
+                  'advertisements__price--green': advertisement.data.price <= 7000000
                 })}>
-                {advertisement.price.toLocaleString('cs-CZ')}&nbsp;Kč
+                {advertisement.data.price.toLocaleString('cs-CZ')}&nbsp;Kč
               </div>
             </div>
             <div>
-              {advertisement.description.split('\n').map((paragraph, index) => (
+              {advertisement.data.description.split('\n').map((paragraph, index) => (
                 <p key={`${advertisement.id}_${index}`}>{paragraph}</p>
               ))}
             </div>
           </div>
           <div className="advertisements__images-container">
-            {advertisement.images.map((href) => (
+            {advertisement.data.images.map((href) => (
               <img
                 key={href}
                 src={href}
