@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 
 import { EstateDTO } from '../../types';
 
-import { getEstates } from '../../utils/apiClient';
+import { getEstates, setNope } from '../../utils/apiClient';
 import Emoji from '../emoji';
 
 import './advertisements.css';
@@ -58,7 +58,7 @@ const Advertisements: React.FC = () => {
               <Button
                 variant="contained"
                 color="secondary"
-                onClick={() => alert('TODO - uved duvod')}
+                onClick={() => setNope(advertisement.id)}
                 className="action-bar__item">
                 Nope&nbsp;
                 <Emoji symbol="👎" label="Nope" />
